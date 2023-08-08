@@ -1,10 +1,10 @@
+import { Button } from '@mui/material'
 import React from 'react'
-import { NavLink } from 'react-router-dom'
 
-const HomePage = () => {
-  return (
-    <div>HomePage<NavLink to="/">Logout</NavLink></div>
-  )
+const HomePage = ({ handleLogout }) => {
+    return (
+        <div>HomePage <Button color='primary' onClick={handleLogout}>Logout</Button></div>
+    )
 }
 
 export default HomePage
