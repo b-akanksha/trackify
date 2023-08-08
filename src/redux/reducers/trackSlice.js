@@ -22,7 +22,7 @@ export const { setTracks, resetTracks } = trackSlice.actions
 export const fetchTopTracks = createAsyncThunk('fetchTracks', async (_, {dispatch}) => {
     try {
         dispatch(setLoader(true));
-        const response = await getRequest('me/top/tracks?time_range=short_term&limit=12');
+        const response = await getRequest('me/top/tracks?time_range=short_term&limit=10');
         dispatch(setTracks(response.data));
         dispatch(setLoader(false));
     } catch(err) {

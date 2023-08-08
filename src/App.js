@@ -8,6 +8,7 @@ import { resetAlert } from './redux/reducers/alertSlice';
 import AlertBanner from './components/Alerts';
 import { resetTracks } from './redux/reducers/trackSlice';
 import Footer from './components/Footer';
+import Loader from './components/Loader';
 
 function App() {
   const { loading } = useSelector(state => state.loader);
@@ -40,7 +41,7 @@ function App() {
   return (
     <>
       <AlertBanner open={open} message={message} handleClose={handleAlertClose} />
-      {loading && <p>Loading...</p>}
+      {loading && <Loader />}
       {!token ? <LoginPage /> : <HomePage handleLogout={logout} />}
       <Footer />
     </>
