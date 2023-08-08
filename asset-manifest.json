@@ -1,16 +1,17 @@
 {
   "files": {
-    "main.css": "/trackify/static/css/main.49df9fe4.css",
-    "main.js": "/trackify/static/js/main.4e43fba5.js",
+    "main.css": "/trackify/static/css/main.01f13f57.css",
+    "main.js": "/trackify/static/js/main.ab19ddf6.js",
     "static/js/787.c2618e06.chunk.js": "/trackify/static/js/787.c2618e06.chunk.js",
+    "static/media/music.gif": "/trackify/static/media/music.c3f47e1ba7e0520b35fa.gif",
     "static/media/spotify-icon.svg": "/trackify/static/media/spotify-icon.9e36fed66db8bc0da30c5496f9f001cd.svg",
     "index.html": "/trackify/index.html",
-    "main.49df9fe4.css.map": "/trackify/static/css/main.49df9fe4.css.map",
-    "main.4e43fba5.js.map": "/trackify/static/js/main.4e43fba5.js.map",
+    "main.01f13f57.css.map": "/trackify/static/css/main.01f13f57.css.map",
+    "main.ab19ddf6.js.map": "/trackify/static/js/main.ab19ddf6.js.map",
     "787.c2618e06.chunk.js.map": "/trackify/static/js/787.c2618e06.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.49df9fe4.css",
-    "static/js/main.4e43fba5.js"
+    "static/css/main.01f13f57.css",
+    "static/js/main.ab19ddf6.js"
   ]
 }
