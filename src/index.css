@@ -1,0 +1,80 @@
+body {
+    background-color: #205585;
+    padding: 32px;
+    color: white;
+}
+
+.layout {
+    height: 90vh;
+}
+
+.flexLayout {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.loginLayout {
+    height: 90vh;
+}
+
+.loginContainer {
+    flex-wrap: wrap;
+}
+
+.gradContainer {
+    width: 200px;
+    height: 250px;
+    background: white;
+    margin: 16px 32px;
+    box-shadow: 0px 5px #fff9f9;
+}
+
+.grad {
+    width: 200px;
+    height: 200px;
+    background: linear-gradient(to bottom,
+            #4B7CB6 0%,
+            #B64B7C 33%,
+            #4B7CB6 66%,
+            #B64B7C 100%);
+    background-size: 100% 300%;
+    background-position: 0% 0%;
+
+    animation: anime-grad 3s linear infinite;
+}
+
+@keyframes anime-grad {
+    0% {
+        background-position: 0% 0%;
+    }
+    100% {
+        background-position: 0% 100%;
+    }
+}
+
+.gradContainer span{
+    color: black;
+    text-align: center;
+    font-size: 24px;
+}
+
+.textLayout {
+    flex-direction: column;
+    padding: 8px 16px;
+}
+
+.spotifySvg {
+    width: 20px;
+    margin-right: 8px
+}
+
+.spotifyContainer {
+    justify-content: flex-start;
+    margin: 4px 0;
+}
+
+.spotifyContainer a {
+    color: white;
+    
+}
