@@ -9,8 +9,8 @@ const LoginPage = () => {
             <div className='flexLayout loginContainer'>
                 <div className='gradContainer'>
                     <div className='flexLayout textLayout'>
-                        <Typography variant='subtitle1'>This is</Typography>
-                        <Typography variant='body1'><b><i>Trackify</i></b></Typography>
+                        <Typography variant='body1'>This is</Typography>
+                        <Typography variant='subtitle1'><b><i>Trackify</i></b></Typography>
                     </div>
                     <div className='grad' />
 
