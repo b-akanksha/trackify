@@ -1,6 +1,7 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import { setLoader } from './loaderSlice'
 import { getRequest } from '../../utils/axios'
+import { setAlert } from './alertSlice'
 
 const authSlice = createSlice({
   name: 'auth',
@@ -29,6 +30,7 @@ export const fetchUserDetails = createAsyncThunk('fetchDetails', async (_, {disp
         dispatch(setLoader(false));
     } catch(err) {
         dispatch(setLoader(false));
+        dispatch(setAlert('Failed to fetch user details'));
     }
 
 }) 
