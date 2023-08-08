@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/trackify/static/css/main.a7878014.css",
-    "main.js": "/trackify/static/js/main.c3902566.js",
+    "main.css": "/trackify/static/css/main.b69ed859.css",
+    "main.js": "/trackify/static/js/main.4e43fba5.js",
     "static/js/787.c2618e06.chunk.js": "/trackify/static/js/787.c2618e06.chunk.js",
     "static/media/spotify-icon.svg": "/trackify/static/media/spotify-icon.9e36fed66db8bc0da30c5496f9f001cd.svg",
     "index.html": "/trackify/index.html",
-    "main.a7878014.css.map": "/trackify/static/css/main.a7878014.css.map",
-    "main.c3902566.js.map": "/trackify/static/js/main.c3902566.js.map",
+    "main.b69ed859.css.map": "/trackify/static/css/main.b69ed859.css.map",
+    "main.4e43fba5.js.map": "/trackify/static/js/main.4e43fba5.js.map",
     "787.c2618e06.chunk.js.map": "/trackify/static/js/787.c2618e06.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a7878014.css",
-    "static/js/main.c3902566.js"
+    "static/css/main.b69ed859.css",
+    "static/js/main.4e43fba5.js"
   ]
 }
