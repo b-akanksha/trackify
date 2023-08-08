@@ -1,11 +1,10 @@
 import React, { useEffect, useRef } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Button, Typography } from '@mui/material'
-import CustomTable from '../Table';
 import { fetchUserDetails } from '../../redux/reducers/authSlice';
 import { months } from '../../utils/months';
 import { fetchTopTracks } from '../../redux/reducers/trackSlice';
-import { toPng } from 'html-to-image';
+import { toJpeg } from 'html-to-image';
 
 const HomePage = ({ handleLogout }) => {
     const { user } = useSelector(state => state.auth);
@@ -22,7 +21,7 @@ const HomePage = ({ handleLogout }) => {
     }, [])
 
     const htmlToImageConvert = () => {
-        toPng(elementRef.current, { cacheBust: false })
+        toJpeg(elementRef.current, { cacheBust: false })
             .then((dataUrl) => {
                 const link = document.createElement("a");
                 link.download = "top-tracks.png";
@@ -40,23 +39,31 @@ const HomePage = ({ handleLogout }) => {
                 <Button onClick={handleLogout} variant='outlined'>Logout</Button>
             </div>
             <div ref={elementRef}>
-                <div className='flexLayout loginContainer'>
-                    <div className='gradContainer'>
-                        <div className='flexLayout thisIsText'>
-                            <Typography variant='subtitle1'>This is {currentMonth}'s </Typography>
-                            <Typography variant='body1'><b><i>Top Tracks</i></b></Typography>
+                <div className='flexLayout flexWrap'>
+                    <div id="case3" class="cd-case">
+                        <div class="album-art">
+                            <Typography variant='h2' className='album-text'><b>My top <b>{currentMonth}</b> songs</b></Typography>
+                            <div class="sup pos-tl"></div>
+                            <div class="sup pos-tr"></div>
+                            <div class="sup pos-bl"></div>
+                            <div class="sup pos-br"></div>
                         </div>
-                        <div className='grad' />
+                        <div class="spine"></div>
                     </div>
-                    <div >
-                        <Typography variant='h4'>This is {user.display_name}'s current fav!</Typography>
-                        <Typography variant='body1'>The tunes that you can't get enough of and the tracks that have been stuck in your head for days! </Typography>
+                    <div id="case4" class="cd-case">
+                        <div class="album-art">
+                            <div style={{ padding: '16px'}}>
+                                {tracks.items?.map((item, index) => <Typography variant="subtitle1">#{index+1} {item.name}</Typography>)}
+                            </div>
+                            <div class="sup pos-tl"></div>
+                            <div class="sup pos-tr"></div>
+                            <div class="sup pos-bl"></div>
+                            <div class="sup pos-br"></div>
+                        </div>
+                        <div class="spine"></div>
                     </div>
                 </div>
-                <div className='divider' />
-                <div className='gridContainer'>
-                    <CustomTable tracks={tracks} />
-                </div>
+                <Typography variant='subtitle1' style={{ textAlign: 'center' }}>Made with <i>Trackify</i></Typography>
             </div>
         </div>
     )
