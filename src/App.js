@@ -8,7 +8,7 @@ import { resetAlert } from './redux/reducers/alertSlice';
 import AlertBanner from './components/Alerts';
 import { resetTracks } from './redux/reducers/trackSlice';
 import Footer from './components/Footer';
-import Loader from './components/Loader';
+import { Typography } from '@mui/material';
 
 function App() {
   const { loading } = useSelector(state => state.loader);
@@ -41,7 +41,7 @@ function App() {
   return (
     <>
       <AlertBanner open={open} message={message} handleClose={handleAlertClose} />
-      {loading && <Loader />}
+      {loading && <Typography variant="caption">Loading..</Typography>}
       {!token ? <LoginPage /> : <HomePage handleLogout={logout} />}
       <Footer />
     </>
