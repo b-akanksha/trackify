@@ -4,11 +4,14 @@ import HomePage from './components/HomePage';
 import { useDispatch, useSelector } from 'react-redux';
 import { getTokenFromUrl } from './utils/spotifyHelper';
 import { resetAuth, setAuth } from './redux/reducers/authSlice';
+import { resetAlert } from './redux/reducers/alertSlice';
+import AlertBanner from './components/Alerts';
 
 function App() {
-  const {loading} = useSelector(state => state.loader);
-  const {token} = useSelector(state => state.auth);
-  
+  const { loading } = useSelector(state => state.loader);
+  const { token } = useSelector(state => state.auth);
+  const { open, message } = useSelector(state => state.alert);
+
   const dispatch = useDispatch();
 
   React.useEffect(() => {
@@ -16,7 +19,7 @@ function App() {
 
     window.location.hash = '';
 
-    if(spotToken) {
+    if (spotToken) {
       window.localStorage.setItem('spotify_token', spotToken);
       dispatch(setAuth(spotToken));
     }
@@ -26,8 +29,14 @@ function App() {
     dispatch(resetAuth());
     window.localStorage.removeItem('spotify_token');
   };
+
+  const handleAlertClose = () => {
+    dispatch(resetAlert());
+  };
+
   return (
     <>
+      <AlertBanner open={open} message={message} handleClose={handleAlertClose} />
       {loading && <p>Loading...</p>}
       {!token ? <LoginPage /> : <HomePage handleLogout={logout} />}
     </>
