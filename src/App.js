@@ -6,6 +6,7 @@ import { getTokenFromUrl } from './utils/spotifyHelper';
 import { resetAuth, setAuth } from './redux/reducers/authSlice';
 import { resetAlert } from './redux/reducers/alertSlice';
 import AlertBanner from './components/Alerts';
+import { resetTracks } from './redux/reducers/trackSlice';
 
 function App() {
   const { loading } = useSelector(state => state.loader);
@@ -27,6 +28,7 @@ function App() {
 
   const logout = () => {
     dispatch(resetAuth());
+    dispatch(resetTracks());
     window.localStorage.removeItem('spotify_token');
   };
 

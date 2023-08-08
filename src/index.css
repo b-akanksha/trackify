@@ -1,14 +1,30 @@
 body {
-    background-color: #205585;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
     padding: 32px;
     color: white;
 }
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
 
 .layout {
     height: 90vh;
 }
 
 .flexLayout {
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -33,27 +49,12 @@ body {
 .grad {
     width: 200px;
     height: 200px;
-    background: linear-gradient(to bottom,
-            #4B7CB6 0%,
-            #B64B7C 33%,
-            #4B7CB6 66%,
-            #B64B7C 100%);
-    background-size: 100% 300%;
-    background-position: 0% 0%;
-
-    animation: anime-grad 3s linear infinite;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
 }
 
-@keyframes anime-grad {
-    0% {
-        background-position: 0% 0%;
-    }
-    100% {
-        background-position: 0% 100%;
-    }
-}
-
-.gradContainer span{
+.gradContainer h6, h6~p{
     color: black;
     text-align: center;
     font-size: 24px;
@@ -61,7 +62,7 @@ body {
 
 .textLayout {
     flex-direction: column;
-    padding: 8px 16px;
+    padding: 8px;
 }
 
 .spotifySvg {
@@ -76,5 +77,45 @@ body {
 
 .spotifyContainer a {
     color: white;
-    
+}
+
+.logoutButtonLayout {
+    flex: 1;
+    flex-direction: row;
+    justify-content: space-between;
+    color: white
+}
+
+.logoutButtonLayout button, button:hover {
+    color: white !important;
+    text-transform: capitalize;
+    padding: 8px;
+    border-radius: 20px;
+    border-color: white !important;
+}
+
+.thisIsText {
+    flex-direction: column;
+}
+
+.divider {
+    height: 1px;
+    background: white;
+    width: 90%;
+    margin-top: 8pxs;
+}
+
+.trackDetails {
+    display: flex;
+    margin: 16px;
+}
+
+.gridContainer {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding: 16px;
+}
+
+.trackName {
+    margin-left: 16px;
 }
