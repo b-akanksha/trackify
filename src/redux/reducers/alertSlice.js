@@ -5,8 +5,8 @@ const alertSlice = createSlice({
     initialState: { open: false, message: null },
     reducers: {
         setAlert(state, action) {
-            state.open = true,
-                state.message = action.payload
+            state.open = true;
+            state.message = action.payload
         },
         resetAlert(state) {
             state = { open: false, message: null };
