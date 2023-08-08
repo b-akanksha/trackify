@@ -1,12 +1,12 @@
 {
   "files": {
-    "main.js": "/trackify/static/js/main.68b00e98.js",
+    "main.js": "/trackify/static/js/main.0d61dc34.js",
     "static/js/787.c2618e06.chunk.js": "/trackify/static/js/787.c2618e06.chunk.js",
     "index.html": "/trackify/index.html",
-    "main.68b00e98.js.map": "/trackify/static/js/main.68b00e98.js.map",
+    "main.0d61dc34.js.map": "/trackify/static/js/main.0d61dc34.js.map",
     "787.c2618e06.chunk.js.map": "/trackify/static/js/787.c2618e06.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.68b00e98.js"
+    "static/js/main.0d61dc34.js"
   ]
 }
