@@ -9,8 +9,8 @@ const LoginPage = () => {
             <div className='flexLayout loginContainer'>
                 <div className='gradContainer'>
                     <div className='flexLayout textLayout'>
-                        <Typography variant='subtitle'>This is</Typography>
-                        <Typography variant='body'><b><i>Trackify</i></b></Typography>
+                        <Typography variant='subtitle1'>This is</Typography>
+                        <Typography variant='body1'><b><i>Trackify</i></b></Typography>
                     </div>
                     <div className='grad' />
 
@@ -20,7 +20,7 @@ const LoginPage = () => {
                 <Typography variant='body'>Discover your music listening habits with <i>Trackify</i></Typography>
                 <div className='flexLayout spotifyContainer'>
                     <Spotify className='spotifySvg'/>
-                    <Typography variant='subtitle'>
+                    <Typography variant='subtitle1'>
                     <a
                         className='button'
                         href={`${process.env.REACT_APP_AUTH_ENDPOINT}?client_id=${process.env.REACT_APP_CLIENT_ID

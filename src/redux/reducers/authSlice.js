@@ -32,7 +32,6 @@ export const fetchUserDetails = createAsyncThunk('fetchDetails', async (_, {disp
         dispatch(setLoader(false));
         dispatch(setAlert('Failed to fetch user details'));
     }
-
 }) 
 
 export default authSlice.reducer
