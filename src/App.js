@@ -7,6 +7,7 @@ import { resetAuth, setAuth } from './redux/reducers/authSlice';
 import { resetAlert } from './redux/reducers/alertSlice';
 import AlertBanner from './components/Alerts';
 import { resetTracks } from './redux/reducers/trackSlice';
+import Footer from './components/Footer';
 
 function App() {
   const { loading } = useSelector(state => state.loader);
@@ -41,6 +42,7 @@ function App() {
       <AlertBanner open={open} message={message} handleClose={handleAlertClose} />
       {loading && <p>Loading...</p>}
       {!token ? <LoginPage /> : <HomePage handleLogout={logout} />}
+      <Footer />
     </>
   );
 }
