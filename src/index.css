@@ -110,12 +110,14 @@ button:hover {
 .trackDetails {
     display: flex;
     margin: 16px;
+    min-width: 300px;
 }
 
 .gridContainer {
-    display: grid;
-    grid-template-columns: auto auto auto;
+    display: flex;
+    flex-direction: row;
     padding: 16px;
+    flex-wrap: wrap;
 }
 
 .trackName {
