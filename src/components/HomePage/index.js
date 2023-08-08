@@ -1,16 +1,17 @@
-import { Button, Divider, Typography } from '@mui/material'
-import React, { useEffect } from 'react'
+import React, { useEffect, useRef } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import { Button, Typography } from '@mui/material'
+import CustomTable from '../Table';
 import { fetchUserDetails } from '../../redux/reducers/authSlice';
 import { months } from '../../utils/months';
-import CustomTable from '../Table';
 import { fetchTopTracks } from '../../redux/reducers/trackSlice';
+import { toPng } from 'html-to-image';
 
 const HomePage = ({ handleLogout }) => {
     const { user } = useSelector(state => state.auth);
     const { tracks } = useSelector(state => state.tracks);
+    const elementRef = useRef(null);
 
-    console.log({tracks})
     const d = new Date();
     const currentMonth = months[d.getMonth()];
     const dispatch = useDispatch();
@@ -19,28 +20,43 @@ const HomePage = ({ handleLogout }) => {
         dispatch(fetchUserDetails());
         dispatch(fetchTopTracks());
     }, [])
+
+    const htmlToImageConvert = () => {
+        toPng(elementRef.current, { cacheBust: false })
+            .then((dataUrl) => {
+                const link = document.createElement("a");
+                link.download = "top-tracks.png";
+                link.href = dataUrl;
+                link.click();
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+    };
     return (
         <div className='flexLayout textLayout'>
             <div className='flexLayout logoutButtonLayout'>
-                <span />
+                <Button onClick={htmlToImageConvert} variant='outlined'>Download</Button>
                 <Button onClick={handleLogout} variant='outlined'>Logout</Button>
             </div>
-            <div className='flexLayout loginContainer'>
-                <div className='gradContainer'>
-                    <div className='flexLayout thisIsText'>
-                        <Typography variant='subtitle1'>This is {currentMonth}'s </Typography>
-                        <Typography variant='body1'><b><i>Top Tracks</i></b></Typography>
+            <div ref={elementRef}>
+                <div className='flexLayout loginContainer'>
+                    <div className='gradContainer'>
+                        <div className='flexLayout thisIsText'>
+                            <Typography variant='subtitle1'>This is {currentMonth}'s </Typography>
+                            <Typography variant='body1'><b><i>Top Tracks</i></b></Typography>
+                        </div>
+                        <div className='grad' />
                     </div>
-                    <div className='grad' />
+                    <div >
+                        <Typography variant='h4'>This is {user.display_name}'s current fav!</Typography>
+                        <Typography variant='body1'>The tunes that you can't get enough of and the tracks that have been stuck in your head for days! </Typography>
+                    </div>
                 </div>
-                <div >
-                    <Typography variant='h4'>This is {user.display_name}'s current fav!</Typography>
-                    <Typography variant='body1'>The tunes that you can't get enough of and the tracks that have been stuck in your head for days! </Typography>
+                <div className='divider' />
+                <div className='gridContainer'>
+                    <CustomTable tracks={tracks} />
                 </div>
-            </div>
-            <div className='divider' />
-            <div className='gridContainer'>
-                <CustomTable tracks={tracks} />
             </div>
         </div>
     )
