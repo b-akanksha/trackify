@@ -1,13 +1,11 @@
 import React, { useEffect, useRef } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Button, Typography } from '@mui/material'
-import { fetchUserDetails } from '../../redux/reducers/authSlice';
 import { months } from '../../utils/months';
 import { fetchTopTracks } from '../../redux/reducers/trackSlice';
 import { toJpeg } from 'html-to-image';
 
 const HomePage = ({ handleLogout }) => {
-    const { user } = useSelector(state => state.auth);
     const { tracks } = useSelector(state => state.tracks);
     const elementRef = useRef(null);
 
@@ -16,7 +14,6 @@ const HomePage = ({ handleLogout }) => {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch(fetchUserDetails());
         dispatch(fetchTopTracks());
     }, [])
 
